@@ -1,6 +1,10 @@
+# import './fragment_schedule_fields.graphql'
+
 query Items {
     items {
         id
-        date
+        schedule {
+            ...ScheduleFields
+        }
     }
 }

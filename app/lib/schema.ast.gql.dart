@@ -2,8 +2,8 @@
 
 import 'package:gql/ast.dart' as _i1;
 
-const Date = _i1.ScalarTypeDefinitionNode(
-    name: _i1.NameNode(value: 'Date'), directives: []);
+const DateTime = _i1.ScalarTypeDefinitionNode(
+    name: _i1.NameNode(value: 'DateTime'), directives: []);
 const Query = _i1.ObjectTypeDefinitionNode(
     name: _i1.NameNode(value: 'Query'),
     directives: [],
@@ -30,10 +30,35 @@ const Item = _i1.ObjectTypeDefinitionNode(
           type: _i1.NamedTypeNode(
               name: _i1.NameNode(value: 'ID'), isNonNull: true)),
       _i1.FieldDefinitionNode(
-          name: _i1.NameNode(value: 'date'),
+          name: _i1.NameNode(value: 'schedule'),
           directives: [],
           args: [],
           type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'Date'), isNonNull: false))
+              name: _i1.NameNode(value: 'Schedule'), isNonNull: false))
     ]);
-const document = _i1.DocumentNode(definitions: [Date, Query, Item]);
+const Schedule = _i1.ObjectTypeDefinitionNode(
+    name: _i1.NameNode(value: 'Schedule'),
+    directives: [],
+    interfaces: [],
+    fields: [
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'start'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'DateTime'), isNonNull: false)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'end'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'DateTime'), isNonNull: false)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'live'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Boolean'), isNonNull: false))
+    ]);
+const document =
+    _i1.DocumentNode(definitions: [DateTime, Query, Item, Schedule]);

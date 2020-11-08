@@ -1,5 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+import 'package:app/graphql/fragment_schedule_fields.ast.gql.dart' as _i2;
 import 'package:gql/ast.dart' as _i1;
 
 const Items = _i1.OperationDefinitionNode(
@@ -21,11 +22,15 @@ const Items = _i1.OperationDefinitionNode(
                 directives: [],
                 selectionSet: null),
             _i1.FieldNode(
-                name: _i1.NameNode(value: 'date'),
+                name: _i1.NameNode(value: 'schedule'),
                 alias: null,
                 arguments: [],
                 directives: [],
-                selectionSet: null)
+                selectionSet: _i1.SelectionSetNode(selections: [
+                  _i1.FragmentSpreadNode(
+                      name: _i1.NameNode(value: 'ScheduleFields'),
+                      directives: [])
+                ]))
           ]))
     ]));
-const document = _i1.DocumentNode(definitions: [Items]);
+const document = _i1.DocumentNode(definitions: [Items, _i2.ScheduleFields]);

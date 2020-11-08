@@ -7,11 +7,15 @@ part of 'serializers.gql.dart';
 // **************************************************************************
 
 Serializers _$serializers = (new Serializers().toBuilder()
-      ..add(GDate.serializer)
+      ..add(GDateTime.serializer)
       ..add(GItemsData.serializer)
       ..add(GItemsData_items.serializer)
+      ..add(GItemsData_items_schedule.serializer)
       ..add(GItemsReq.serializer)
       ..add(GItemsVars.serializer)
+      ..add(GScheduleFieldsData.serializer)
+      ..add(GScheduleFieldsReq.serializer)
+      ..add(GScheduleFieldsVars.serializer)
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(GItemsData_items)]),
           () => new ListBuilder<GItemsData_items>()))

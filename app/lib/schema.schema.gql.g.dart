@@ -6,30 +6,30 @@ part of 'schema.schema.gql.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$GDate extends GDate {
+class _$GDateTime extends GDateTime {
   @override
   final String value;
 
-  factory _$GDate([void Function(GDateBuilder) updates]) =>
-      (new GDateBuilder()..update(updates)).build();
+  factory _$GDateTime([void Function(GDateTimeBuilder) updates]) =>
+      (new GDateTimeBuilder()..update(updates)).build();
 
-  _$GDate._({this.value}) : super._() {
+  _$GDateTime._({this.value}) : super._() {
     if (value == null) {
-      throw new BuiltValueNullFieldError('GDate', 'value');
+      throw new BuiltValueNullFieldError('GDateTime', 'value');
     }
   }
 
   @override
-  GDate rebuild(void Function(GDateBuilder) updates) =>
+  GDateTime rebuild(void Function(GDateTimeBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GDateBuilder toBuilder() => new GDateBuilder()..replace(this);
+  GDateTimeBuilder toBuilder() => new GDateTimeBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GDate && value == other.value;
+    return other is GDateTime && value == other.value;
   }
 
   @override
@@ -39,21 +39,21 @@ class _$GDate extends GDate {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('GDate')..add('value', value))
+    return (newBuiltValueToStringHelper('GDateTime')..add('value', value))
         .toString();
   }
 }
 
-class GDateBuilder implements Builder<GDate, GDateBuilder> {
-  _$GDate _$v;
+class GDateTimeBuilder implements Builder<GDateTime, GDateTimeBuilder> {
+  _$GDateTime _$v;
 
   String _value;
   String get value => _$this._value;
   set value(String value) => _$this._value = value;
 
-  GDateBuilder();
+  GDateTimeBuilder();
 
-  GDateBuilder get _$this {
+  GDateTimeBuilder get _$this {
     if (_$v != null) {
       _value = _$v.value;
       _$v = null;
@@ -62,21 +62,21 @@ class GDateBuilder implements Builder<GDate, GDateBuilder> {
   }
 
   @override
-  void replace(GDate other) {
+  void replace(GDateTime other) {
     if (other == null) {
       throw new ArgumentError.notNull('other');
     }
-    _$v = other as _$GDate;
+    _$v = other as _$GDateTime;
   }
 
   @override
-  void update(void Function(GDateBuilder) updates) {
+  void update(void Function(GDateTimeBuilder) updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$GDate build() {
-    final _$result = _$v ?? new _$GDate._(value: value);
+  _$GDateTime build() {
+    final _$result = _$v ?? new _$GDateTime._(value: value);
     replace(_$result);
     return _$result;
   }

@@ -1,0 +1,5 @@
+fragment ScheduleFields on Schedule {
+    start
+    end
+    live
+}

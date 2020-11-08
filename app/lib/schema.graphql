@@ -1,4 +1,4 @@
-scalar Date
+scalar DateTime
 
 type Query {
     items: [Item!]
@@ -6,5 +6,11 @@ type Query {
 
 type Item {
     id: ID!
-    date: Date
+    schedule: Schedule
+}
+
+type Schedule {
+    start: DateTime
+    end: DateTime
+    live: Boolean
 }

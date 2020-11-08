@@ -6,7 +6,7 @@ var {graphqlHTTP} = require('express-graphql');
 var {buildSchema} = require('graphql');
 
 var schema = buildSchema(`
-scalar Date
+scalar DateTime
 
 type Query {
     items: [Item!]
@@ -14,7 +14,13 @@ type Query {
 
 type Item {
     id: ID!
-    date: Date
+    schedule: Schedule
+}
+
+type Schedule {
+    start: DateTime
+    end: DateTime
+    live: Boolean
 }
 `);
 
@@ -22,11 +28,19 @@ var root = {
     items: () => [
         {
             id: "4eb43f2a-c757-4691-a8f2-9b2132e6c687",
-            date: "2020-11-08"
+            schedule: {
+                start: "2020-11-08T00:15:00+0000",
+                end: "2020-11-09T00:58:03+0000",
+                live: false
+            }
         },
         {
             id: "8ae4c0a9-8484-487d-b1ec-405a3f7e8b33",
-            date: null
+            schedule: {
+                start: "2020-11-08T14:00:00+0000",
+                end: "2020-11-08T22:58:54+0000",
+                live: true
+            }
         }
     ]
 };

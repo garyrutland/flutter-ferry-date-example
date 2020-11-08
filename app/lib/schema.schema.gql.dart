@@ -7,14 +7,15 @@ import 'package:gql_code_builder/src/serializers/default_scalar_serializer.dart'
 
 part 'schema.schema.gql.g.dart';
 
-abstract class GDate implements Built<GDate, GDateBuilder> {
-  GDate._();
+abstract class GDateTime implements Built<GDateTime, GDateTimeBuilder> {
+  GDateTime._();
 
-  factory GDate([String value]) =>
-      _$GDate((b) => value != null ? (b..value = value) : b);
+  factory GDateTime([String value]) =>
+      _$GDateTime((b) => value != null ? (b..value = value) : b);
 
   String get value;
   @BuiltValueSerializer(custom: true)
-  static Serializer<GDate> get serializer => _i1.DefaultScalarSerializer<GDate>(
-      (Object serialized) => GDate(serialized));
+  static Serializer<GDateTime> get serializer =>
+      _i1.DefaultScalarSerializer<GDateTime>(
+          (Object serialized) => GDateTime(serialized));
 }
