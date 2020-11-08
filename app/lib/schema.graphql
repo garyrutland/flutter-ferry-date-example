@@ -1,0 +1,10 @@
+scalar Date
+
+type Query {
+    items: [Item!]
+}
+
+type Item {
+    id: ID!
+    date: Date
+}
