@@ -24,9 +24,9 @@ dependencies:
   flutter:
     sdk: flutter
   ferry: ^0.8.0
-  ferry_flutter: ^0.3.0
-  gql_http_link: ^0.3.2
-  gql_transform_link: ^0.1.5
+  ferry_flutter: 0.3.0
+  gql_http_link: 0.3.2
+  gql_transform_link: 0.1.5
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -35,8 +35,8 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  ferry_generator: ^0.3.0
-  build_runner: ^1.10.1
+  ferry_generator: 0.3.0
+  build_runner: 1.10.2
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
