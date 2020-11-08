@@ -1,11 +1,10 @@
 import 'package:app/graphql/items.data.gql.dart';
 import 'package:app/graphql/items.req.gql.dart';
 import 'package:app/graphql/items.var.gql.dart';
+import 'package:app/graphql_client.dart';
 import 'package:ferry/ferry.dart';
 import 'package:ferry_flutter/ferry_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:gql_http_link/gql_http_link.dart';
-import 'package:gql_transform_link/gql_transform_link.dart';
 
 void main() {
   runApp(MyApp());
@@ -44,23 +43,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final client = Client(
-    link: Link.from(<Link>[
-      TransformLink(
-        requestTransformer: (request) {
-          print('requestTransformer');
-          print(request);
-          return request;
-        },
-        responseTransformer: (response) {
-          print('responseTransformer');
-          print(response);
-          return response;
-        },
-      ),
-      HttpLink("http://localhost:4000/graphql"),
-    ]),
-  );
+  final GraphQlClient graphQlClient = GraphQlClient();
 
   final GItemsReq request = GItemsReq();
 
@@ -68,13 +51,14 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Operation(
-        client: client,
+        client: graphQlClient.client,
         operationRequest: request,
         builder: (BuildContext context,
             OperationResponse<GItemsData, GItemsVars> response) {
           if (response.loading)
             return Center(child: CircularProgressIndicator());
 
+          print('OperationResponse');
           print(response.data);
 
           return Center(
