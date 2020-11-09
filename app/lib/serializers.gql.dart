@@ -8,7 +8,6 @@ import 'package:app/graphql/items.data.gql.dart'
     show GItemsData, GItemsData_items, GItemsData_items_schedule;
 import 'package:app/graphql/items.req.gql.dart' show GItemsReq;
 import 'package:app/graphql/items.var.gql.dart' show GItemsVars;
-import 'package:app/schema.schema.gql.dart' show GDateTime;
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/serializer.dart';
 import 'package:built_value/standard_json_plugin.dart' show StandardJsonPlugin;
@@ -21,7 +20,6 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   ..add(OperationSerializer())
   ..addPlugin(StandardJsonPlugin());
 @SerializersFor([
-  GDateTime,
   GItemsData,
   GItemsData_items,
   GItemsData_items_schedule,

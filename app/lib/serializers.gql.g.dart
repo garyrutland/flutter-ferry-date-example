@@ -7,7 +7,6 @@ part of 'serializers.gql.dart';
 // **************************************************************************
 
 Serializers _$serializers = (new Serializers().toBuilder()
-      ..add(GDateTime.serializer)
       ..add(GItemsData.serializer)
       ..add(GItemsData_items.serializer)
       ..add(GItemsData_items_schedule.serializer)

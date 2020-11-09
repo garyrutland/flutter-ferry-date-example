@@ -32,13 +32,13 @@ class _$GScheduleFieldsDataSerializer
       result
         ..add('start')
         ..add(serializers.serialize(object.start,
-            specifiedType: const FullType(_i1.GDateTime)));
+            specifiedType: const FullType(DateTime)));
     }
     if (object.end != null) {
       result
         ..add('end')
         ..add(serializers.serialize(object.end,
-            specifiedType: const FullType(_i1.GDateTime)));
+            specifiedType: const FullType(DateTime)));
     }
     if (object.live != null) {
       result
@@ -66,12 +66,12 @@ class _$GScheduleFieldsDataSerializer
               specifiedType: const FullType(String)) as String;
           break;
         case 'start':
-          result.start.replace(serializers.deserialize(value,
-              specifiedType: const FullType(_i1.GDateTime)) as _i1.GDateTime);
+          result.start = serializers.deserialize(value,
+              specifiedType: const FullType(DateTime)) as DateTime;
           break;
         case 'end':
-          result.end.replace(serializers.deserialize(value,
-              specifiedType: const FullType(_i1.GDateTime)) as _i1.GDateTime);
+          result.end = serializers.deserialize(value,
+              specifiedType: const FullType(DateTime)) as DateTime;
           break;
         case 'live':
           result.live = serializers.deserialize(value,
@@ -88,9 +88,9 @@ class _$GScheduleFieldsData extends GScheduleFieldsData {
   @override
   final String G__typename;
   @override
-  final _i1.GDateTime start;
+  final DateTime start;
   @override
-  final _i1.GDateTime end;
+  final DateTime end;
   @override
   final bool live;
 
@@ -150,14 +150,13 @@ class GScheduleFieldsDataBuilder
   String get G__typename => _$this._G__typename;
   set G__typename(String G__typename) => _$this._G__typename = G__typename;
 
-  _i1.GDateTimeBuilder _start;
-  _i1.GDateTimeBuilder get start =>
-      _$this._start ??= new _i1.GDateTimeBuilder();
-  set start(_i1.GDateTimeBuilder start) => _$this._start = start;
+  DateTime _start;
+  DateTime get start => _$this._start;
+  set start(DateTime start) => _$this._start = start;
 
-  _i1.GDateTimeBuilder _end;
-  _i1.GDateTimeBuilder get end => _$this._end ??= new _i1.GDateTimeBuilder();
-  set end(_i1.GDateTimeBuilder end) => _$this._end = end;
+  DateTime _end;
+  DateTime get end => _$this._end;
+  set end(DateTime end) => _$this._end = end;
 
   bool _live;
   bool get live => _$this._live;
@@ -170,8 +169,8 @@ class GScheduleFieldsDataBuilder
   GScheduleFieldsDataBuilder get _$this {
     if (_$v != null) {
       _G__typename = _$v.G__typename;
-      _start = _$v.start?.toBuilder();
-      _end = _$v.end?.toBuilder();
+      _start = _$v.start;
+      _end = _$v.end;
       _live = _$v.live;
       _$v = null;
     }
@@ -193,27 +192,9 @@ class GScheduleFieldsDataBuilder
 
   @override
   _$GScheduleFieldsData build() {
-    _$GScheduleFieldsData _$result;
-    try {
-      _$result = _$v ??
-          new _$GScheduleFieldsData._(
-              G__typename: G__typename,
-              start: _start?.build(),
-              end: _end?.build(),
-              live: live);
-    } catch (_) {
-      String _$failedField;
-      try {
-        _$failedField = 'start';
-        _start?.build();
-        _$failedField = 'end';
-        _end?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            'GScheduleFieldsData', _$failedField, e.toString());
-      }
-      rethrow;
-    }
+    final _$result = _$v ??
+        new _$GScheduleFieldsData._(
+            G__typename: G__typename, start: start, end: end, live: live);
     replace(_$result);
     return _$result;
   }

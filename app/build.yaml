@@ -1,18 +1,41 @@
 targets:
   $default:
     builders:
-      gql_build|schema_builder:
-        enabled: true
       gql_build|ast_builder:
         enabled: true
+      gql_build|schema_builder:
+        enabled: true
+        options:
+          schema: app|lib/schema.graphql
+          type_overrides:
+            DateTime:
+              name: DateTime
+            Date:
+              name: DateTime
+            Time:
+              name: DateTime
       gql_build|data_builder:
         enabled: true
         options:
           schema: app|lib/schema.graphql
+          type_overrides:
+            DateTime:
+              name: DateTime
+            Date:
+              name: DateTime
+            Time:
+              name: DateTime
       gql_build|var_builder:
         enabled: true
         options:
           schema: app|lib/schema.graphql
+          type_overrides:
+            DateTime:
+              name: DateTime
+            Date:
+              name: DateTime
+            Time:
+              name: DateTime
       gql_build|serializer_builder:
         enabled: true
         options:
@@ -22,3 +45,10 @@ targets:
         enabled: true
         options:
           schema: app|lib/schema.graphql
+          type_overrides:
+            DateTime:
+              name: DateTime
+            Date:
+              name: DateTime
+            Time:
+              name: DateTime

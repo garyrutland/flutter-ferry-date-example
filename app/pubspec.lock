@@ -277,6 +277,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.3"
+  gql_error_link:
+    dependency: "direct main"
+    description:
+      name: gql_error_link
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.1-alpha+1601131172858"
   gql_exec:
     dependency: transitive
     description:

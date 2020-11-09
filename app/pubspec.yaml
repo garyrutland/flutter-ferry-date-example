@@ -23,9 +23,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  ferry: ^0.8.0
+  ferry: 0.8.0
   ferry_flutter: 0.3.0
   gql_http_link: 0.3.2
+  gql_error_link: ^0.1.1-alpha
   gql_transform_link: 0.1.5
 
   # The following adds the Cupertino Icons font to your application.
