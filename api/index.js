@@ -7,6 +7,7 @@ var {buildSchema} = require('graphql');
 
 var schema = buildSchema(`
 scalar DateTime
+scalar Time
 
 type Query {
     items: [Item!]
@@ -14,6 +15,7 @@ type Query {
 
 type Item {
     id: ID!
+    time: Time!
     schedule: Schedule
 }
 
@@ -28,6 +30,7 @@ var root = {
     items: () => [
         {
             id: "4eb43f2a-c757-4691-a8f2-9b2132e6c687",
+            time: "15:00:00",
             schedule: {
                 start: "2020-11-08T00:15:00+0000",
                 end: "2020-11-09T00:58:03+0000",
@@ -36,6 +39,7 @@ var root = {
         },
         {
             id: "8ae4c0a9-8484-487d-b1ec-405a3f7e8b33",
+            time: "14:00:00",
             schedule: {
                 start: "2020-11-08T14:00:00+0000",
                 end: "2020-11-08T22:58:54+0000",

@@ -4,6 +4,8 @@ import 'package:gql/ast.dart' as _i1;
 
 const DateTime = _i1.ScalarTypeDefinitionNode(
     name: _i1.NameNode(value: 'DateTime'), directives: []);
+const Time = _i1.ScalarTypeDefinitionNode(
+    name: _i1.NameNode(value: 'Time'), directives: []);
 const Query = _i1.ObjectTypeDefinitionNode(
     name: _i1.NameNode(value: 'Query'),
     directives: [],
@@ -29,6 +31,12 @@ const Item = _i1.ObjectTypeDefinitionNode(
           args: [],
           type: _i1.NamedTypeNode(
               name: _i1.NameNode(value: 'ID'), isNonNull: true)),
+      _i1.FieldDefinitionNode(
+          name: _i1.NameNode(value: 'time'),
+          directives: [],
+          args: [],
+          type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'Time'), isNonNull: true)),
       _i1.FieldDefinitionNode(
           name: _i1.NameNode(value: 'schedule'),
           directives: [],
@@ -61,4 +69,4 @@ const Schedule = _i1.ObjectTypeDefinitionNode(
               name: _i1.NameNode(value: 'Boolean'), isNonNull: false))
     ]);
 const document =
-    _i1.DocumentNode(definitions: [DateTime, Query, Item, Schedule]);
+    _i1.DocumentNode(definitions: [DateTime, Time, Query, Item, Schedule]);

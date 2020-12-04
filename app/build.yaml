@@ -40,7 +40,11 @@ targets:
         enabled: true
         options:
           schema: app|lib/schema.graphql
-
+          custom_serializers:
+            - import: 'package:app/date_time_serializer.dart'
+              name: DateTimeSerializer
+            - import: 'package:app/time_serializer.dart'
+              name: TimeSerializer
       ferry_generator|req_builder:
         enabled: true
         options:
